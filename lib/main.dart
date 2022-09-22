@@ -1,3 +1,4 @@
+import 'package:dartlogistics/dashboard.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Dart Logistics',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
@@ -137,7 +139,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 430,
                         height: 80,
                         child: ElevatedButton(
-                          onPressed: () => {print('Logging In')},
+                          onPressed: () => {
+                            print('Logging In'),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
+                              ),
+                            ),
+                          },
                           child: const Text(
                             'Login',
                             style: TextStyle(
